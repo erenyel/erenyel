@@ -5,8 +5,8 @@
   <title>Eren Yel Kartvizit</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;400;300&display=swap" rel="stylesheet">
-  <!-- Favicon: user-circle -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='12' cy='12' r='10' stroke='%2345badd' stroke-width='2'/><circle cx='12' cy='10' r='4' stroke='%2345badd' stroke-width='2'/><path d='M5 19c1.5-2.5 6.5-2.5 8 0' stroke='%2345badd' stroke-width='2' stroke-linecap='round'/></svg>">
+  <!-- Favicon: Modern user icon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='12' r='10' stroke='%2345badd' stroke-width='2'/%3E%3Ccircle cx='12' cy='10' r='4' stroke='%2345badd' stroke-width='2'/%3E%3Cpath d='M5 19c1.5-2.5 6.5-2.5 8 0' stroke='%2345badd' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
   <style>
     :root {
       --bg-dark: #20232a;
@@ -14,27 +14,28 @@
       --card-dark: #232946;
       --card-light: #fff;
       --accent: #45badd;
-      --photo-bg-dark: #2e3651;
-      --photo-bg-light: #daf3ff;
+      --photo-bg-dark: #27304b;
+      --photo-bg-light: #e4f7ff;
       --text-dark: #f4f7fa;
       --text-light: #1b2a39;
-      --list-bg-dark: #262e3c;
-      --list-bg-light: #e7f4fb;
-      --badge-bg: #25324a;
-      --badge-bg-light: #e3f7fd;
+      --tag-bg-dark: #29344a;
+      --tag-bg-light: #e6f7fc;
+      --tag-txt-dark: #b6eafc;
+      --tag-txt-light: #178fb2;
       --btn: #eaf6fb;
       --btn-active: #45badd;
       --radius: 2.2rem;
-      --pattern-dark: url("data:image/svg+xml,%3Csvg width='80' height='80' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='80' height='80' fill='none'/%3E%3Cpath d='M0 0h80v80H0V0zm40 0v80M0 40h80' stroke='%23324855' stroke-width='0.8'/%3E%3C/svg%3E");
-      --pattern-light: url("data:image/svg+xml,%3Csvg width='80' height='80' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='80' height='80' fill='none'/%3E%3Cpath d='M0 0h80v80H0V0zm40 0v80M0 40h80' stroke='%23dde7ee' stroke-width='0.8'/%3E%3C/svg%3E");
+      /* Dalgalı Pattern SVG (duotone, soft) */
+      --pattern-dark: url("data:image/svg+xml,%3Csvg width='120' height='60' viewBox='0 0 120 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 36c13.5 0 13.5-24 27-24s13.5 24 27 24 13.5-24 27-24 13.5 24 27 24' stroke='%2331485c' stroke-width='1.2' fill='none'/%3E%3C/svg%3E");
+      --pattern-light: url("data:image/svg+xml,%3Csvg width='120' height='60' viewBox='0 0 120 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 36c13.5 0 13.5-24 27-24s13.5 24 27 24 13.5-24 27-24 13.5 24 27 24' stroke='%23d5e9f5' stroke-width='1.2' fill='none'/%3E%3C/svg%3E");
     }
     html, body {
       margin: 0; padding: 0;
       min-height: 100vh;
       font-family: 'Montserrat', Arial, sans-serif;
       background: var(--bg-dark) var(--pattern-dark);
-      overflow-x: hidden;
       box-sizing: border-box;
+      overflow-x: hidden;
     }
     body.light {
       background: var(--bg-light) var(--pattern-light);
@@ -52,13 +53,13 @@
       color: var(--text-dark);
       border-radius: var(--radius);
       box-shadow: 0 8px 40px #131c2830;
-      width: 390px;
-      max-width: 98vw;
+      width: 370px;
+      max-width: 99vw;
       margin: 0 auto 10px auto;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 1.8rem 1.2rem 2.2rem 1.2rem;
+      padding: 2.35rem 1.3rem 2.4rem 1.3rem;
       transition: background .4s, color .4s, box-shadow .4s;
       z-index: 1;
       position: relative;
@@ -69,56 +70,53 @@
       box-shadow: 0 6px 32px #d5ecfc60;
     }
     .photo-wrap {
-      width: 108px;
-      height: 108px;
+      width: 104px;
+      height: 104px;
       border-radius: 100%;
       background: var(--photo-bg-dark);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 20px #2227ff1b;
-      position: absolute;
-      top: -54px;
-      left: 50%;
-      transform: translateX(-50%);
+      box-shadow: 0 4px 16px #2d436a1a;
+      margin: 0 auto 10px auto;
       border: 6px solid var(--card-dark);
       z-index: 2;
       transition: background .4s, border .4s;
+      position: static;
     }
     body.light .photo-wrap {
       background: var(--photo-bg-light);
       border: 6px solid var(--card-light);
-      box-shadow: 0 4px 24px #60caff1a;
+      box-shadow: 0 4px 16px #6ac7f11a;
     }
     .profile-pic {
-      width: 91px; height: 91px;
+      width: 88px; height: 88px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3.5px solid var(--accent);
+      border: 3px solid var(--accent);
       background: #fff;
       box-shadow: 0 2px 8px #65d1e020;
     }
     .name {
-      font-size: 2.1rem;
+      font-size: 2.02rem;
       font-weight: 700;
       letter-spacing: .04em;
-      margin-top: 58px;
-      margin-bottom: 2px;
+      margin: 7px 0 2px 0;
       text-align: center;
-      line-height: 1.2;
+      line-height: 1.1;
     }
     .title {
       font-size: 1.09rem;
       color: var(--accent);
       font-weight: 600;
-      margin-bottom: .8rem;
+      margin-bottom: .82rem;
       margin-top: 3px;
       text-align: center;
     }
     .links {
       display: flex;
       gap: 1.1rem;
-      margin: 10px 0 14px 0;
+      margin: 7px 0 17px 0;
       justify-content: center;
       width: 100%;
     }
@@ -129,102 +127,139 @@
       width: 38px;
       height: 38px;
       border-radius: 50%;
-      background: #222f43;
+      background: #212c3d;
       color: #a9d7e7;
-      transition: background .25s, color .25s, box-shadow .2s;
-      font-size: 1.19rem;
+      transition: background .19s, color .19s, box-shadow .18s;
+      font-size: 1.18rem;
       border: none;
-      box-shadow: 0 2px 7px #252c4726;
+      box-shadow: 0 2px 7px #252c4723;
       text-decoration: none;
     }
     body.light .links a {
-      background: #e1f6ff;
-      color: #19739b;
-      box-shadow: 0 2px 10px #92d6f112;
+      background: #e2f7fd;
+      color: #1683b6;
+      box-shadow: 0 2px 10px #a2e4fd13;
     }
     .links a:hover {
       background: var(--accent);
       color: #232946;
-      box-shadow: 0 4px 20px #45badd38;
-      transform: scale(1.11);
+      box-shadow: 0 4px 15px #45badd3a;
+      transform: scale(1.09);
     }
     .about-block {
-      width: 99%;
-      background: var(--list-bg-dark);
-      border-radius: 1.3rem;
-      box-shadow: 0 2px 12px #0001;
-      padding: 1.15rem 1.1rem 1.09rem 1.1rem;
-      margin: 0.8rem 0 0.5rem 0;
+      width: 100%;
+      background: transparent;
+      box-shadow: none;
+      padding: 0;
+      margin-top: 5px;
+      margin-bottom: 9px;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      gap: 13px;
-    }
-    body.light .about-block {
-      background: var(--list-bg-light);
-      color: #1683b6;
-      box-shadow: 0 2px 14px #b2eafc13;
+      align-items: center;
+      gap: 4px;
     }
     .about-title {
       color: var(--accent);
       font-weight: 700;
       font-size: 1.09rem;
       letter-spacing: .01em;
-      margin-bottom: 2px;
+      margin-bottom: 3px;
     }
-    .about-list {
-      margin: 0; padding-left: 0;
+    .about-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
       list-style: none;
       width: 100%;
     }
-    .about-list li {
-      font-size: 1.06rem;
-      margin-bottom: 6px;
-      font-weight: 500;
-      color: inherit;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .badges {
-      display: flex; flex-wrap: wrap;
-      gap: 10px; justify-content: flex-start;
-      margin: 13px 0 4px 0;
-      width: 99%;
-    }
-    .badge {
-      background: var(--badge-bg);
-      color: #bde7fa;
-      padding: 6px 14px 6px 12px;
-      font-size: 1.01rem;
-      border-radius: 1.2rem;
+    .about-tag {
+      background: var(--tag-bg-dark);
+      color: var(--tag-txt-dark);
+      padding: 7px 15px;
+      border-radius: 1.1rem;
       font-weight: 600;
-      display: flex; align-items: center;
-      gap: 6px;
-      border: none;
-      transition: background .28s, color .28s, transform .16s;
-      animation: badgePop .7s cubic-bezier(.59,-0.05,.32,1.18) backwards;
+      font-size: 1.02rem;
+      margin: 0;
+      transition: background .22s, color .22s;
       cursor: default;
-      letter-spacing: .01em;
+      border: none;
+      outline: none;
+      user-select: none;
     }
-    .badge .badge-icon { font-size: 1.14em; }
-    body.light .badge { background: var(--badge-bg-light); color: #178cb8; }
-    .qr-block {
-      background: #192642eb;
-      color: #fff;
-      border-radius: 1.2rem;
-      box-shadow: 0 2px 12px #0002;
-      padding: 1.07rem 0.6rem .9rem 0.6rem;
+    .about-tag:hover {
+      background: var(--accent);
+      color: #20232a;
+    }
+    body.light .about-tag {
+      background: var(--tag-bg-light);
+      color: var(--tag-txt-light);
+    }
+    /* Rozetler 2x2 grid */
+    .badges-block {
+      width: 100%;
+      margin: 8px 0 12px 0;
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+    .badges-title {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 1.08rem;
+      margin-bottom: 4px;
+    }
+    .badges-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      width: 100%;
+      justify-content: center;
+      margin: 0 auto;
+    }
+    .badge-tag {
+      background: var(--tag-bg-dark);
+      color: var(--tag-txt-dark);
+      padding: 7px 10px 7px 14px;
+      border-radius: 1.1rem;
+      font-weight: 600;
+      font-size: 1.02rem;
+      display: flex;
+      align-items: center;
       gap: 6px;
-      width: 99%;
-      margin: 1.1rem 0 0.4rem 0;
+      transition: background .22s, color .22s;
+      cursor: default;
+      border: none;
+      outline: none;
+      user-select: none;
+      justify-content: flex-start;
+    }
+    .badge-tag:hover {
+      background: var(--accent);
+      color: #20232a;
+    }
+    body.light .badge-tag {
+      background: var(--tag-bg-light);
+      color: var(--tag-txt-light);
+    }
+    .qr-block {
+      background: #eaf9ff21;
+      color: #2097c6;
+      border-radius: 1.1rem;
+      box-shadow: 0 2px 9px #4fd7f411;
+      padding: .9rem .2rem .7rem .2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      width: 100%;
+      margin: 13px 0 3px 0;
       font-size: 1.02rem;
     }
-    body.light .qr-block { background: #e6f8fffa; color: #2086a9; }
-    .qr-title { font-weight: bold; margin-bottom: 3px; color: var(--accent); font-size: 1.01em;}
+    body.light .qr-block { background: #e6f8fffa; color: #1683b6; }
+    .qr-title { font-weight: bold; margin-bottom: 2px; color: var(--accent); font-size: 1.01em;}
     .qr-img { margin: 2px 0; border-radius: 1rem; border: 1.5px solid #45badd22; }
     .card-controls {
       width: 100%;
@@ -291,23 +326,23 @@
     .modal-content {
       background: #232946;
       color: #fff;
-      padding: 1.2rem 1.2rem 1.1rem 1.2rem;
-      border-radius: 1.05rem;
+      padding: 1.15rem 1.1rem 1.09rem 1.1rem;
+      border-radius: 1.1rem;
       box-shadow: 0 4px 36px #23294671;
       text-align: center;
-      min-width: 230px;
+      min-width: 210px;
       max-width: 90vw;
       position: relative;
       animation: fadein .34s cubic-bezier(.77,.03,.16,1.02);
     }
     .modal .close {
       position: absolute;
-      right: 13px;
-      top: 12px;
+      right: 10px;
+      top: 8px;
       background: none;
       border: none;
       color: #45badd;
-      font-size: 1.45rem;
+      font-size: 1.43rem;
       font-weight: bold;
       cursor: pointer;
       padding: 0;
@@ -315,13 +350,12 @@
     }
     @media (max-width: 560px) {
       .main-card { width: 99vw; padding: 1.1rem .1rem 1.2rem .1rem; border-radius: 1.1rem;}
-      .photo-wrap { width: 74px; height: 74px; top: -37px; border-width: 4px;}
-      .profile-pic { width: 59px; height: 59px;}
-      .about-block, .qr-block { border-radius: 1rem; }
-      .card-controls { gap: 6px;}
+      .photo-wrap { width: 64px; height: 64px; border-width: 4px;}
+      .profile-pic { width: 50px; height: 50px;}
+      .about-tag, .badge-tag { font-size: .99rem;}
+      .badges-grid { gap: 7px;}
     }
-    @keyframes badgePop { from{opacity:0;transform:scale(.8) translateY(18px);} to{opacity:1;transform:scale(1) translateY(0);} }
-    @keyframes fadein { from{opacity:0;transform:translateY(40px);} to{opacity:1;transform:translateY(0);} }
+    @keyframes fadein { from{opacity:0;transform:translateY(30px);} to{opacity:1;transform:translateY(0);} }
   </style>
 </head>
 <body>
@@ -367,19 +401,26 @@
       </div>
       <div class="about-block">
         <div class="about-title" id="about-title">Hakkımda</div>
-        <ul class="about-list" id="about-list">
-          <li>3D Tasarım, Otomasyon Sistemleri, Yazılım, Elektronik</li>
-          <li>Teknoloji, Bilgisayar Oyunları, Grafik Tasarım</li>
-          <li>Takım Çalışması, Problem Çözme, Yaratıcılık</li>
+        <ul class="about-tags" id="about-list">
+          <li class="about-tag">3D Tasarım</li>
+          <li class="about-tag">Otomasyon Sistemleri</li>
+          <li class="about-tag">Yazılım</li>
+          <li class="about-tag">Elektronik</li>
+          <li class="about-tag">Teknoloji</li>
+          <li class="about-tag">Bilgisayar Oyunları</li>
+          <li class="about-tag">Grafik Tasarım</li>
+          <li class="about-tag">Takım Çalışması</li>
+          <li class="about-tag">Problem Çözme</li>
+          <li class="about-tag">Yaratıcılık</li>
         </ul>
       </div>
-      <div class="about-block" id="achievements-block">
-        <div class="about-title" id="achievements-title">Başarılar / Roller</div>
-        <div class="badges" id="badges">
-          <span class="badge"><span class="badge-icon">🌏</span><span id="badge1">AIESEC Bursa Alumni</span></span>
-          <span class="badge"><span class="badge-icon">🛠️</span><span id="badge2">Makine Mühendisliği 3. Sınıf</span></span>
-          <span class="badge"><span class="badge-icon">🎨</span><span id="badge3">Freelance Designer</span></span>
-          <span class="badge"><span class="badge-icon">📱</span><span id="badge4">Sosyal Medya Danışmanlığı</span></span>
+      <div class="badges-block">
+        <div class="badges-title" id="badges-title">Başarılar / Roller</div>
+        <div class="badges-grid">
+          <span class="badge-tag"><span style="font-size:1.1em;">🌏</span> <span id="badge1">AIESEC Bursa Alumni</span></span>
+          <span class="badge-tag"><span style="font-size:1.1em;">🛠️</span> <span id="badge2">Makine Mühendisliği 3. Sınıf</span></span>
+          <span class="badge-tag"><span style="font-size:1.1em;">🎨</span> <span id="badge3">Freelance Designer</span></span>
+          <span class="badge-tag"><span style="font-size:1.1em;">📱</span> <span id="badge4">Sosyal Medya Danışmanlığı</span></span>
         </div>
       </div>
       <div class="qr-block">
@@ -442,7 +483,6 @@
       dark = !dark;
       setTheme(dark);
     });
-    // Tema başlangıç
     if(localStorage.getItem('erenyelTheme')=='light') {
       dark = false; setTheme(false);
     } else if(window.matchMedia('(prefers-color-scheme: light)').matches) {
@@ -450,8 +490,7 @@
     } else {
       dark = true; setTheme(true);
     }
-
-    // Dil seçici ve tüm içerik çoklu dil desteği
+    // Dil seçici ve içerik
     const trBtn = document.getElementById('trBtn');
     const enBtn = document.getElementById('enBtn');
     trBtn.onclick = function() {
@@ -462,11 +501,18 @@
       document.getElementById('unvan').innerHTML = "Makine Mühendisliği Öğrencisi<br>Bursa Teknik Üniversitesi";
       document.getElementById('about-title').textContent = "Hakkımda";
       document.getElementById('about-list').innerHTML = `
-        <li>3D Tasarım, Otomasyon Sistemleri, Yazılım, Elektronik</li>
-        <li>Teknoloji, Bilgisayar Oyunları, Grafik Tasarım</li>
-        <li>Takım Çalışması, Problem Çözme, Yaratıcılık</li>
+        <li class="about-tag">3D Tasarım</li>
+        <li class="about-tag">Otomasyon Sistemleri</li>
+        <li class="about-tag">Yazılım</li>
+        <li class="about-tag">Elektronik</li>
+        <li class="about-tag">Teknoloji</li>
+        <li class="about-tag">Bilgisayar Oyunları</li>
+        <li class="about-tag">Grafik Tasarım</li>
+        <li class="about-tag">Takım Çalışması</li>
+        <li class="about-tag">Problem Çözme</li>
+        <li class="about-tag">Yaratıcılık</li>
       `;
-      document.getElementById('achievements-title').textContent = "Başarılar / Roller";
+      document.getElementById('badges-title').textContent = "Başarılar / Roller";
       document.getElementById('badge1').textContent = "AIESEC Bursa Alumni";
       document.getElementById('badge2').textContent = "Makine Mühendisliği 3. Sınıf";
       document.getElementById('badge3').textContent = "Freelance Designer";
@@ -487,11 +533,18 @@
       document.getElementById('unvan').innerHTML = "Mechanical Engineering Student<br>Bursa Technical University";
       document.getElementById('about-title').textContent = "About Me";
       document.getElementById('about-list').innerHTML = `
-        <li>3D Design, Automation Systems, Software, Electronics</li>
-        <li>Technology, Video Games, Graphic Design</li>
-        <li>Teamwork, Problem Solving, Creativity</li>
+        <li class="about-tag">3D Design</li>
+        <li class="about-tag">Automation Systems</li>
+        <li class="about-tag">Software</li>
+        <li class="about-tag">Electronics</li>
+        <li class="about-tag">Technology</li>
+        <li class="about-tag">Video Games</li>
+        <li class="about-tag">Graphic Design</li>
+        <li class="about-tag">Teamwork</li>
+        <li class="about-tag">Problem Solving</li>
+        <li class="about-tag">Creativity</li>
       `;
-      document.getElementById('achievements-title').textContent = "Achievements / Roles";
+      document.getElementById('badges-title').textContent = "Achievements / Roles";
       document.getElementById('badge1').textContent = "AIESEC Bursa Alumni";
       document.getElementById('badge2').textContent = "3rd Year Mech. Engineering";
       document.getElementById('badge3').textContent = "Freelance Designer";
@@ -504,12 +557,10 @@
       document.getElementById('copyBtn').textContent = "Copy";
       document.getElementById('mailCopied').textContent = "Copied!";
     };
-    // animasyon
     [trBtn, enBtn].forEach(btn => btn.addEventListener('click', () => {
-      btn.animate([{transform:'scale(0.9)'},{transform:'scale(1.16)'},{transform:'scale(1)'}],{duration:230});
+      btn.animate([{transform:'scale(0.92)'},{transform:'scale(1.17)'},{transform:'scale(1)'}],{duration:200});
     }));
-    trBtn.classList.add('active'); // Varsayılan
-
+    trBtn.classList.add('active');
     // Modal işlemleri
     const mailModal = document.getElementById('mailModal');
     document.getElementById('mailLink').onclick = function(e){ e.preventDefault(); mailModal.classList.add('show'); }
@@ -519,7 +570,6 @@
       document.getElementById('mailCopied').style.display = 'block';
       setTimeout(()=>{document.getElementById('mailCopied').style.display='none';},1200);
     };
-
     // Ziyaretçi sayacı
     const counter = document.getElementById('counter');
     let count = Number(localStorage.getItem('erenyelCounter')||0)+1;
